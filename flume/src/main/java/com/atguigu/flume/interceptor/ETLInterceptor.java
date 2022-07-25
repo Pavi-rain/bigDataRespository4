@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ETLInterceptor implements Interceptor {
-
+//com.atguigu.flume.interceptor.ETLInterceptor
     @Override
     public void initialize() {
 
