@@ -6,12 +6,14 @@ import org.apache.flume.Event;
 import org.apache.flume.interceptor.Interceptor;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class TimeStampInterceptor implements Interceptor {
 //com.atguigu.flume.interceptor.TimeStampInterceptor
-
+    
+    private ArrayList<Event> events = new ArrayList<>();
     @Override
     public void initialize() {
 
@@ -44,11 +46,13 @@ public class TimeStampInterceptor implements Interceptor {
     @Override
     public List<Event> intercept(List<Event> list) {
 
+        events.clear();
         for (Event event : list) {
-            intercept(event);
+            events.add(intercept(event));
         }
 
-        return list;
+        return events;
+
     }
 
     @Override
