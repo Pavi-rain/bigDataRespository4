@@ -14,6 +14,10 @@ import org.json.JSONArray;
 
 import java.util.ArrayList;
 
+/**
+ * 把json数组 炸裂成多行json
+ * hive中get_json_object()  可以取出json中的具体属性
+ */
 public class ExplodeJSONArray extends GenericUDTF {
 //com.atguigu.hive.udtf.ExplodeJSONArray
     private  PrimitiveObjectInspector inputOI;
@@ -60,8 +64,6 @@ public class ExplodeJSONArray extends GenericUDTF {
             String[] result={json};
             forward(result);
         };
-
-
 
     }
 
