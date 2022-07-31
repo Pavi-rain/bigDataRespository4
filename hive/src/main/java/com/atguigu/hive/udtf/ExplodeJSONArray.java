@@ -63,7 +63,7 @@ public class ExplodeJSONArray extends GenericUDTF {
             String json = jsonArray.getString(i);
             String[] result={json};
             forward(result);
-        };
+        }
 
     }
 
